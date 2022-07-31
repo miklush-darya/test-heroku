@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- {{ session["user"] }} -->
+    <h1>Add Product</h1>
+    
+    <form action="{{ url_for('products.add_prod') }}" method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div>{{ form.name_product.label }}</div>
+        <div>{{ form.name_product }}</div>
+
+        <div>{{ form.description.label }}</div>
+        <div>{{ form.description }}</div>
+
+        <div>{{ form.characteristics.label }}</div>
+        <div>{{ form.characteristics }}</div>
+
+        <div>{{ form.category.label }}</div>
+        <div>{{ form.category }}</div>
+
+        <div>{{ form.submit }}</div>
+
+    </form>
+{% endblock %}

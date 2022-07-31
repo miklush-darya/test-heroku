@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+    {{ super() }}
+    <h3>Product List</h3>
+
+    <!-- {% for c in category %} -->
+        <!-- <div class="col"> -->
+            <!-- <a href="{{ url_for('products.list_product') }}"></a> -->
+                <!-- <p>{{ c.name_category }}</p> -->
+                <!-- <button class="btn btn-outline-success" type="button" id="button-addon1">В корзину</button> -->
+                <!-- $('.btn').button(В корзину); -->
+        <!-- </div> -->
+    <!-- {% endfor %} -->
+
+    <!-- <div class="container">
+        {% for p in product %}
+            <div class="row">
+                <div class="col-sm-3">
+                        <a href="{{ url_for('products.list_product') }}">
+                            <p><h4>{{ p.name_product }}</p></h4>
+                            <p>{{ p.description }}</p>
+                            <p>{{ p.characteristics }}</p>
+                            <p>{{ p.category }}</p>
+                        </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div> -->
+    
+
+    <!-- {{ session["user"] }} -->
+
+    <div class="container">
+        <div class="row"> 
+            
+            <ul class="nav nav-tabs">
+            
+                {% for p in product %}
+                <div class="col">
+                    <!-- <a href="{{ url_for('products.list_product') }}"></a> -->
+                        <p><h3>{{ p.name_product }}</p></h3>
+                        <p>{{ p.description }}</p>
+                        <p>{{ p.characteristics }}</p>
+                        <!-- <p>{{ p.category }}</p> -->
+                        <button class="btn btn-outline-success" type="button" id="button-addon1">В корзину</button>
+                        <!-- $('.btn').button(В корзину); -->
+                    
+                    
+                </div>
+                {% endfor %}
+            </ul>
+        </div>
+    
+    </div>
+{% endblock %}
