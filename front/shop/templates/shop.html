@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {{ session["shop"] }}
+    <h1>Add Shop</h1>
+
+    <form action="{{ url_for('shop.shop') }}" method="POST">
+        {{ form.hidden_tag() }}
+       <h3>
+        <div>
+            <h6> Add  shop name  </h6>
+            {{ form.name_shop }}
+        </div>
+        <div>
+           <h6> UNP</h6>
+            {{ form.unp}}
+        </div>
+        <div>{{ form.submit }}</div>
+       </h3>
+    </form>
+
+{% endblock %}
+
+
+

@@ -5,12 +5,14 @@ import requests
 from config import Config
 from user.routers import user_blueprint
 from prod_and_cat.routers import products_blueprint
+from shop.routers import shop_blueprint
 
 
 app = Flask(__name__)
 app.config.from_object(Config)
 app.register_blueprint(user_blueprint)
 app.register_blueprint(products_blueprint)
+app.register_blueprint(shop_blueprint)
 
 API = "http://127.0.0.1:8000"
 
